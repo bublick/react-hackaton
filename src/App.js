@@ -41,8 +41,7 @@ function App() {
                   }));
                 return (
                   <div className="">
-                    <Breadcrumbs crumbs={crumbs} />
-                    <Component {...props} />
+                    <Component {...props} crumbs={crumbs} />
                   </div>
                 );
               }}
