@@ -1,23 +1,22 @@
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Bookmark from "./components/bookmark/bookmark";
 import Header from "./components/header/header";
 import MainPage from "./components/mainPage/mainPage";
-import NotFound from "./components/notFound/notFound";
-import User from "./components/user/user";
+import Users from "./components/users/users";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
       <Switch>
-        <Route path="/user" component={User} />
+        <Route path="/users/:userId?" component={Users} />
         <Route path="/bookmark" component={Bookmark} />
-        <Route path="/404" component={NotFound} />
+        {/* <Route path="/404" component={NotFound} /> */}
+        {/* <Redirect to="/404" /> */}
         <Route path="/" exact component={MainPage} />
-        <Redirect to="/404" />
       </Switch>
-    </Router>
+    </>
   );
 }
 
