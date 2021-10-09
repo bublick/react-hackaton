@@ -1,10 +1,14 @@
 const users = [
     {
-        _id: '349sdff32',
+        _id: '349sdfaf32ui5424d',
         name: 'Джон Дориан',
         age: '21',
         about: 'О себе',
         photo: '',
+        social: {
+            github: 'http://github.com/username',
+            telegram: 'https://t.me/username',
+        },
         role: '',
     },
 ]
