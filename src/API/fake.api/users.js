@@ -42,6 +42,8 @@ const getUserById = (id) =>
 
 const fetchAllTechs = () => {}
 
+const fetchAllPhotos = () => {}
+
 export default {
     fetchAll,
     getUserById,
