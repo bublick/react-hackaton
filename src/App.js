@@ -1,8 +1,8 @@
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Bookmark from "./components/bookmark/bookmark";
 import Header from "./components/header/header";
 import MainPage from "./components/mainPage/mainPage";
+import NotFound from "./components/notFound/notFound";
 import Users from "./components/users/users";
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
       <Header />
       <Switch>
         <Route path="/users/:userId?" component={Users} />
-        <Route path="/bookmark" component={Bookmark} />
-        {/* <Route path="/404" component={NotFound} /> */}
-        {/* <Redirect to="/404" /> */}
+        <Redirect from="/react-hackaton" to="/" />
+        <Route path="/404" component={NotFound} />
         <Route path="/" exact component={MainPage} />
+        <Redirect to="/404" />
       </Switch>
     </>
   );
