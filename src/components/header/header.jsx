@@ -1,14 +1,15 @@
-import React from "react";
-import NavBar from "../navBar/navBar";
-import "./header.css";
+import React from 'react'
+import NavBar from '../navBar/navBar'
+import './header.css'
 
 const Header = () => {
-  return (
-    <header className="header">
-      <NavBar />
-      <button>Сменить тему</button>
-    </header>
-  );
-};
+    return (
+        <header className='main-header'>
+            <div className='container'>
+                <NavBar />
+            </div>
+        </header>
+    )
+}
 
-export default Header;
+export default Header

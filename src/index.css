@@ -11,3 +11,166 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/** General **/
+.container{
+  display: block;
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+/** Icons **/
+
+
+/** Header **/  
+header.main-header{
+background-color: #efefef;
+margin-bottom: 40px;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand-logo{
+  color: #666;
+  font-size: 1.9em;
+  text-decoration: none;
+}
+
+.navbar__list{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  max-width: 50%;
+  justify-content: space-between;
+}
+
+.navbar__list-item{
+
+}
+
+.navbar__item-anchor{
+  position: relative; 
+  color: #000;
+}
+
+.navbar__item-anchor:before{
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  transition: ease-in-out width .3s;
+}
+
+.navbar__item-anchor:hover:before{
+  width: 100%;
+}
+
+
+/** Single user **/
+.single-user{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-user__photo-wrapper{
+  max-width: 200px;
+  flex-basis: 200px;
+  margin-right: 40px;
+}
+
+.single-user__photo-img{
+  width: 100%;
+}
+
+.single-user__meta{
+  flex-basis: 50%;
+}
+
+.single-user__meta-label{
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.single-user__meta-name,
+.single-user__meta-age,
+.single-user__meta-about,
+.single-user__meta-socials,
+.single-user__meta-role{
+  margin-bottom: 20px;
+}
+
+.single-user__meta-social{
+  display: block;
+  height: 24px;
+}
+
+.meta-social__list{
+  display: flex;
+  position: relative;
+  height: 10px;
+  width: 100%;
+  padding: 0;
+}
+
+.meta-social__list-item{
+  position: relative;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.meta-social__list-item:before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.social-github:before{
+  background-image: url(./icons/github.svg);
+}
+
+.social-telegram:before{
+  background-image: url(./icons/telegram.svg);
+}
+
+/* users list */
+
+.users-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.users-list__user{
+  flex-basis: 300px;
+  color: #000;
+}
+
+.user-list__photo-wrapper{
+  width: 100%;
+}
+
+.user-list__photo-img{
+  height: 100%;
+  width: auto;
+  max-height: 220px;
+}
+
+.user-list__name{
+    
+}

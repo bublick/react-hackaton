@@ -9,19 +9,25 @@ const Users = () => {
 
     return (
         <div className='container'>
-            <h1>Users</h1>
-            {users
-                ? users.map((user) => (
-                      <div className='users'>
-                          <a href={'/users/' + user._id}>
-                              <div className='user__photo'>
-                                  <img src={user.photo} />
+            <h1>Команда</h1>
+            <div className='users-list'>
+                {users
+                    ? users.map((user) => (
+                          <a
+                              class='users-list__user'
+                              href={'/users/' + user._id}
+                          >
+                              <div className='user-list__photo-wrapper'>
+                                  <img
+                                      className='user-list__photo-img'
+                                      src={user.photo}
+                                  />
                               </div>
-                              <div className='user-meta__name'>{user.name}</div>
+                              <div className='user-list__name'>{user.name}</div>
                           </a>
-                      </div>
-                  ))
-                : null}
+                      ))
+                    : null}
+            </div>
         </div>
     )
 }
