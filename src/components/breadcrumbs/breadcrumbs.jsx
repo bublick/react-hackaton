@@ -6,7 +6,6 @@ const Breadcrumbs = ({ crumbs, specify }) => {
   if (crumbs.length <= 1) {
     return null;
   }
-
   return (
     <div className="breadcrumbs">
       {crumbs.map(({ name, path }, key) =>
