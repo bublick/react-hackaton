@@ -71,8 +71,6 @@ const users = [
             html: '50',
             css: '50',
             js: '50',
-            php: '50',
-            python: '50',
         },
     },
 ]
