@@ -13,40 +13,58 @@ const User = ({ id }) => {
 
     return (
         <div className='container'>
-            <h1>User</h1>
-
             {user && (
-                <div className=''>
-                    <div className='user__photo'>
-                        <img src={user.photo} />
+                <div className='single-user single-user__row'>
+                    <div className='single-user__photo-wrapper'>
+                        <img
+                            className='single-user__photo-wrapper'
+                            src={user.photo}
+                        />
                     </div>
 
-                    <div className='user-meta'>
-                        <div className='user-meta__name'>{user.name}</div>
-                        <div className='user-meta__age'>{user.age}</div>
-                        <div className='user-meta__about'>{user.about}</div>
-
-                        <div className='user-meta__socials'>
-                            {Object.keys(user.social).map((s) => (
-                                <div
-                                    className={
-                                        'user-meta__social user-meta__social-' +
-                                        s
-                                    }
-                                >
-                                    <a href={user.social[s]}>
-                                        {user.social[s]}
-                                    </a>
-                                </div>
-                            ))}
+                    <div className='single-user__meta'>
+                        <h1 className='single-user__meta-name'>{user.name}</h1>
+                        <div className='single-user__meta-age'>
+                            <span className='single-user__meta-label'>
+                                Возраст:
+                            </span>
+                            {user.age}
+                        </div>
+                        <div className='single-user__meta-about'>
+                            <span className='single-user__meta-label'>
+                                О себе:
+                            </span>
+                            {user.about}
                         </div>
 
-                        <div className='user-meta__role'>{user.role}</div>
-                    </div>
+                        <div className='single-user__meta-socials'>
+                            <span className='single-user__meta-label'>
+                                Социальные сети:
+                            </span>
+                            <ul className='meta-social__list'>
+                                {Object.keys(user.social).map((s) => (
+                                    <div
+                                        className={
+                                            'meta-social__list-item social-' + s
+                                        }
+                                    >
+                                        <a href={user.social[s]}></a>
+                                    </div>
+                                ))}
+                            </ul>
+                        </div>
 
-                    <button onClick={() => handleSaveToLocal(user._id)}>
-                        Fav
-                    </button>
+                        <div className='single-user__meta-role'>
+                            <span className='single-user__meta-label'>
+                                Роль:
+                            </span>
+                            {user.role.name}
+                        </div>
+
+                        <button onClick={() => handleSaveToLocal(user._id)}>
+                            Fav
+                        </button>
+                    </div>
                 </div>
             )}
         </div>
