@@ -14,20 +14,6 @@ const role = {
 
 const users = [
     {
-        _id: '349sdfaf32ui5424d',
-        name: 'Джон Дориан',
-        age: '21',
-        about: 'Молодой врач, к началу сериала только что окончивший медицинский колледж и пришедший в клинику «Sacred Heart» как стажёр. Склонный к фантазированию, открытый для мира, приятный молодой человек. Несмотря на свой статус врача, Джей Ди часто ведёт себя как ребёнок. По ходу развития сюжета становится ординатором, заместителем старшего ординатора, старшим ординатором, штатным врачом, старшим лечащим врачом. В 1-8 сезонах сериала от его лица ведётся повествование. В 9 сезоне — преподаватель медицинского колледжа — главного места событий сезона.',
-        photo: 'https://sites.google.com/site/serialklinika/_/rsrc/1368383579164/akterskij-sostav/zak-braff-dzej-di/%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C-%D1%81%D0%B5%D1%80%D0%B8%D0%B0.jpg',
-        social: {
-            github: 'http://github.com/username',
-            telegram: 'https://t.me/username',
-        },
-        role: role.teamlead,
-        technologies: { css: '80' },
-    },
-
-    {
         _id: '319sdfaf32ui5424d',
         name: 'Артем Рахимов',
         age: '34',
@@ -39,12 +25,12 @@ const users = [
         },
         role: role.developer,
         technologies: {
-            HTML: '80',
-            CSS: '80',
-            JS: '60',
-            React: '30',
-            Git: '50',
-            WebPack: '40',
+            html: '80',
+            css: '80',
+            js: '60',
+            react: '30',
+            git: '50',
+            webpack: '40',
         },
     },
 
@@ -60,13 +46,33 @@ const users = [
         },
         role: role.developer,
         technologies: {
-            HTML: '70',
-            CSS: '50',
-            JS: '70',
-            React: '50',
-            Git: '50',
-            WebPack: '35',
-            CSharp: '60',
+            html: '70',
+            css: '50',
+            js: '70',
+            react: '50',
+            git: '50',
+            webpack: '35',
+            //   csharp: "60",
+        },
+    },
+
+    {
+        _id: '349sdfaf32345sh24d31',
+        name: 'Кирилл Лисенков',
+        age: '28',
+        about: 'Fullstack разработчик. Обладаю хиптерскими привычками в питании',
+        photo: 'https://lis.im/react-hackaton/kirill.jpg',
+        social: {
+            github: 'http://github.com/bublick',
+            telegram: 'https://t.me/@bublick_ru',
+        },
+        role: role.teamlead,
+        technologies: {
+            html: '50',
+            css: '50',
+            js: '50',
+            php: '50',
+            python: '50',
         },
     },
 ]
@@ -83,11 +89,37 @@ const getUserById = (id) =>
         setTimeout(() => resolve(users.find((user) => user._id === id)), 1000)
     )
 
-const fetchAllTechs = () => {}
+const fetchAllTechs = () => {
+    return new Promise(
+        (resolve) =>
+            setTimeout(() => {
+                const allTechnologoes = []
+                for (const user of users) {
+                    Object.keys(user.technologies).forEach((technology) =>
+                        allTechnologoes.push(technology)
+                    )
+                }
+                resolve(Array.from(new Set(allTechnologoes)))
+            }),
+        1000
+    )
+}
 
-const fetchAllPhotos = () => {}
+const fetchAllPhotos = () => {
+    return new Promise((resolve) =>
+        setTimeout(() => {
+            const avatars = []
+            for (const user of users) {
+                avatars.push(user.photo)
+            }
+            resolve(avatars)
+        })
+    )
+}
 
 export default {
     fetchAll,
     getUserById,
+    fetchAllTechs,
+    fetchAllPhotos,
 }
