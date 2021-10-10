@@ -9,17 +9,17 @@ const NavBar = () => {
       </Link>
 
       <ul className="navbar__list">
-        <li class="navbar__list-item">
+        <li className="navbar__list-item">
           <Link className="navbar__item-anchor" to="/">
             Главная
           </Link>
         </li>
-        <li class="navbar__list-item">
+        <li className="navbar__list-item">
           <Link className="navbar__item-anchor" to="/users">
             Команда
           </Link>
         </li>
-        <li class="navbar__list-item">
+        <li className="navbar__list-item">
           <Link className="navbar__item-anchor" to="/bookmark">
             Избранное
           </Link>

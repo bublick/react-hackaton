@@ -3,11 +3,11 @@ import "./App.css";
 import Header from "./components/header/header";
 import MainPage from "./components/mainPage/mainPage";
 import NotFound from "./components/notFound/notFound";
-import User from "./components/user/user";
+import Users from "./components/users/users";
 const routes = [
   { path: "/", name: "Главная", Component: MainPage },
-  { path: "/users", name: "Команда", Component: User },
-  { path: "/users/:userId", name: "Член", Component: User },
+  { path: "/users", name: "Команда", Component: Users },
+  { path: "/users/:userId", name: "Член", Component: Users },
   { path: "/404", name: "404", Component: NotFound },
 ];
 
