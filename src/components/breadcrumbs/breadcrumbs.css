@@ -1,0 +1,23 @@
+.breadcrumbs {
+  margin-bottom: 20px;
+}
+
+.breadcrumbs__item {
+  margin-right: 20px;
+  color: inherit;
+}
+
+.breadcrumbs__item:hover,
+.breadcrumbs__item:focus {
+  color: firebrick;
+  text-decoration: underline;
+}
+
+.breadcrumbs__item--disable {
+  opacity: 0.5;
+}
+.breadcrumbs__item--disable:hover,
+.breadcrumbs__item--disable:focus {
+  color: inherit;
+  text-decoration: none;
+}
