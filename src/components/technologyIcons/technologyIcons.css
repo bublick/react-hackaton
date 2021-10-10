@@ -1,0 +1,8 @@
+.technology-icons {
+  width: 100%;
+  cursor: pointer;
+}
+
+.technology-icons:hover path {
+  fill: firebrick;
+}

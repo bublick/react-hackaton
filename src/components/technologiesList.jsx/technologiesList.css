@@ -1,0 +1,28 @@
+.technologies {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.technologies__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.technologies__name {
+  display: none;
+  text-transform: uppercase;
+}
+
+.technologies__wrapper:hover .technologies__name {
+  display: block;
+}
+
+.technologies__item {
+  width: 10%;
+}

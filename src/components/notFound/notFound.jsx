@@ -1,5 +1,4 @@
-import React from "react";
-import Breadcrumbs from "../breadcrumbs/breadcrumbs";
+
 import query from 'query-string'
 import NavBar from "../navBar/navBar";
 const NotFound = ({crumbs, location}) => {
