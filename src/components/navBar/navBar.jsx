@@ -1,26 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navBar.css";
 
 const NavBar = () => {
   return (
-    <ul className="navigation">
-      <li className="navigation__item">
-        <Link className="navigation__link" to="/">
-          Главная
-        </Link>
-      </li>
-      <li className="navigation__item">
-        <Link className="navigation__link" to="/users">
-          Пользователи
-        </Link>
-      </li>
-      <li className="navigation__item">
-        <Link className="navigation__link" to="/bookmark">
-          Избранное
-        </Link>
-      </li>
-    </ul>
+    <div className="navbar">
+      <Link className="navbar__brand-logo" to="/">
+        BrandLogo
+      </Link>
+
+      <ul className="navbar__list">
+        <li class="navbar__list-item">
+          <Link className="navbar__item-anchor" to="/">
+            Главная
+          </Link>
+        </li>
+        <li class="navbar__list-item">
+          <Link className="navbar__item-anchor" to="/users">
+            Команда
+          </Link>
+        </li>
+        <li class="navbar__list-item">
+          <Link className="navbar__item-anchor" to="/bookmark">
+            Избранное
+          </Link>
+        </li>
+      </ul>
+
+      <button>Сменить тему</button>
+    </div>
   );
 };
 

@@ -3,19 +3,49 @@ import "./App.css";
 import Header from "./components/header/header";
 import MainPage from "./components/mainPage/mainPage";
 import NotFound from "./components/notFound/notFound";
-import Users from "./components/users/users";
+import User from "./components/user/user";
+const routes = [
+  { path: "/", name: "Главная", Component: MainPage },
+  { path: "/users", name: "Команда", Component: User },
+  { path: "/users/:userId", name: "Член", Component: User },
+  { path: "/404", name: "404", Component: NotFound },
+];
 
 function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route path="/users/:userId?" component={Users} />
-        <Redirect from="/react-hackaton" to="/" />
-        <Route path="/404" component={NotFound} />
-        <Route path="/" exact component={MainPage} />
-        <Redirect to="/404" />
-      </Switch>
+      <div className="">
+        <Switch>
+          <Redirect from="/react-hackaton" to="/" />
+          {routes.map(({ path, name, Component }, key) => (
+            <Route
+              exact
+              path={path}
+              key={key}
+              render={props => {
+                const crumbs = routes
+                  .filter(({ path }) => props.match.path.includes(path))
+                  .map(({ path, ...rest }) => ({
+                    path: Object.keys(props.match.params).length
+                      ? Object.keys(props.match.params).reduce(
+                          (path, param) => path.replace(`:${param}`, props.match.params[param]),
+                          path
+                        )
+                      : path,
+                    ...rest,
+                  }));
+                return (
+                  <div className="">
+                    <Component {...props} crumbs={crumbs} />
+                  </div>
+                );
+              }}
+            />
+          ))}
+          <Redirect to="/404" />
+        </Switch>
+      </div>
     </>
   );
 }
